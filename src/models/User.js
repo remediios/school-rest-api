@@ -54,4 +54,8 @@ export default class User extends Model {
     });
     return this;
   }
+
+  isValidPassword(password) {
+    return bcryptjs.compareSync(password, this.password_hash);
+  }
 }
