@@ -70,4 +70,8 @@ export default class Student extends Model {
     ); // to call parent init method
     return this;
   }
+
+  static associate(models) {
+    this.hasMany(models.Photo, { foreignKey: "student_id" });
+  }
 }
